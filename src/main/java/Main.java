@@ -19,8 +19,8 @@ public class Main {
         String filename = "/home/kvacho/Downloads/MOCK_DATA.xlsx";
 
         int totalRows = 0;
-        try (FileInputStream fis = new FileInputStream(new File(filename));
-             XSSFWorkbook wb = new XSSFWorkbook(fis)) {
+        try (FileInputStream fileInputStream = new FileInputStream(new File(filename));
+             XSSFWorkbook wb = new XSSFWorkbook(fileInputStream)) {
             totalRows = wb.getSheetAt(0).getPhysicalNumberOfRows();
         }
 
