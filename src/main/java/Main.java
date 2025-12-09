@@ -35,7 +35,7 @@ public class Main {
             int start = (i * chunkSize) + 1;
             int end = (i == threadCount - 1) ? totalRows : (start + chunkSize);
 
-            System.out.println("Thread " + i + " from rows " + start + " to " + end);
+            System.out.println("rows " + start + " to " + end);
 
             Handler task = new Handler(filename, start, end);
             futures.add(readExecutor.submit(task));
